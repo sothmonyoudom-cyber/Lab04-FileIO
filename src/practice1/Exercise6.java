@@ -144,67 +144,40 @@ public class Exercise6 {
                     }
                 }
             }
-
             input.close();
-
             question1();
             question2();
             question3();
             question4();
-
         } catch (IOException e) {
-
             System.out.println("File not found!");
-
         }
     }
-
     static double percentage(int number, int total) {
-
         return (double) number / total * 100;
     }
-
-
     static void question1() {
-
         System.out.println("\n===== QUESTION 1 =====");
-
         System.out.println("Total candidates: " + total);
-
         System.out.printf("Male: %.2f%%%n",
                 percentage(male, total));
-
         System.out.printf("Female: %.2f%%%n",
                 percentage(female, total));
     }
-
-
     static void question2() {
-
         System.out.println("\n===== QUESTION 2 =====");
-
         System.out.println("Candidates with average >= 90: " + average90);
-
         System.out.printf("Male: %.2f%%%n",
                 percentage(male90, average90));
-
         System.out.printf("Female: %.2f%%%n",
                 percentage(female90, average90));
     }
-
-
     static void question3() {
-
         System.out.println("\n===== QUESTION 3 =====");
-
         System.out.println("Math >= 85: " + math85);
-
         System.out.println("English >= 85: " + english85);
-
         System.out.println("Computer >= 85: " + computer85);
     }
-
-
     static void question4() {
 
         System.out.println("\n===== QUESTION 4 =====");

@@ -7,12 +7,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Exercise5 {
+
     public static void main(String[] args) {
         ArrayList<String[]> students = new ArrayList<>();
         Scanner input = new Scanner(System.in);
         try {
             File file = new File("Ex3StudentData.csv");
             Scanner reader = new Scanner(file);
+            String header = reader.nextLine();
             while (reader.hasNextLine()) {
                 String data = reader.nextLine();
                 String[] student = data.split(",");
@@ -42,17 +44,18 @@ public class Exercise5 {
                 }
             }
             FileWriter writer = new FileWriter("Ex3StudentData.csv");
+            writer.write(header + "\n");
             for (int i = 0; i < students.size(); i++) {
                 writer.write(String.join(",", students.get(i)) + "\n");
             }
             writer.close();
             System.out.println("\nStudent Information (A-Z):");
             for (int i = 0; i < students.size(); i++) {
-               System.out.println(String.join(", ", students.get(i)));
+                System.out.println(String.join(", ", students.get(i)));
             }
             System.out.println("\nStudent data saved successfully!");
         } catch (IOException e) {
-            System.out.println("File not found!");
+            System.out.println("Error: " + e.getMessage());
         }
         input.close();
     }

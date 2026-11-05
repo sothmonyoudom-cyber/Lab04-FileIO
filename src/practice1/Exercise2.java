@@ -38,18 +38,14 @@ public class Exercise2 {
 			}
 			int max = numbers.get(0);
 			int min = numbers.get(0);
-
 			for (int value : numbers) {
-
 			    if (value > max) {
 			        max = value;
 			    }
-
 			    if (value < min) {
 			        min = value;
 			    }
 			}
-
 			System.out.println("Maximum: " + max);
 			System.out.println("Minimum: " + min);
 			
